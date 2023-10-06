@@ -23,7 +23,3 @@ Example: MAPS\E_MAPS\MAP9\PIMS\TIMS.PIM
 ![buggy_waterfall](https://github.com/Ryder17z/Buggy-Losi/assets/2000703/34bc1451-4f2c-49a8-a744-4da92ba92007)
 
 Note: GIF animation speed has been roughly estimated.
-
-* r_pvr2.dll
-  Seems to be PowerVR stuff, due to "PCX1" and "PCX2" strings being present in this file
-  https://vintage3d.org/pcx2.php
