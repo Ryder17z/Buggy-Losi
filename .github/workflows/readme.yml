@@ -1,0 +1,30 @@
+name: Stitch Markdown Files
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Stitch Markdown files into README
+        uses: abhinav/stitchmd-action@v2
+        with:
+          mode: 'write' # This will update the output file [citation:2][citation:5]
+          summary: 'docs/_index.md' # Path to your directory listing file
+          output: 'README.md' # Write to the root directory
+          no-toc: 'true'  # Disable table of contents generation
+
+      - name: Commit and push changes (optional)
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'docs: auto-update README.md from md files'
+          file_pattern: 'README.md'
